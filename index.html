@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		</style>
+    </head>
+    <body>
+		<table id="calculator">
+			<tr>
+				<td colspan=4>&nbsp {{ calculation }}</td>
+			</tr>
+			<tr>
+				<td><button v-on:click="test(7)" type="button" class="btn btn-primary">7</button></td>
+				<td><button v-on:click="test(8)" type="button" class="btn btn-primary">8</button></td>
+				<td><button v-on:click="test(9)" type="button" class="btn btn-primary">9</button></td>
+				<td><button v-on:click="test('+')" type="button" class="btn btn-primary">+</button></td>
+			</tr>
+			<tr>
+				<td><button v-on:click="test(4)" type="button" class="btn btn-primary">4</button></td>
+				<td><button v-on:click="test(5)" type="button" class="btn btn-primary">5</button></td>
+				<td><button v-on:click="test(6)" type="button" class="btn btn-primary">6</button></td>
+				<td><button v-on:click="test('-')" type="button" class="btn btn-primary">-</button></td>
+			</tr>
+			<tr>
+				<td><button v-on:click="test(1)" type="button" class="btn btn-primary">1</button></td>
+				<td><button v-on:click="test(2)" type="button" class="btn btn-primary">2</button></td>
+				<td><button v-on:click="test(3)" type="button" class="btn btn-primary">3</button></td>
+				<td><button v-on:click="test('/')" type="button" class="btn btn-primary">/</button></td>
+			</tr>
+			<tr>
+				<td><button v-on:click="clear()" type="button" class="btn btn-primary">C</button></td>
+				<td><button v-on:click="test(0)" type="button" class="btn btn-primary">0</button></td>
+				<td><button v-on:click="resultFunc()" type="button" class="btn btn-primary">=</button></td>
+				<td><button v-on:click="test('*')" type="button" class="btn btn-primary">*</button></td>
+			</tr>			
+		</table>
+
+        <script src="index.js"></script>
+    </body>
+</html>
