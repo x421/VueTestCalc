@@ -11,7 +11,11 @@ var app = new Vue({
 	methods: {
 	  test: function(num) { 
 		if(typeof num == "string")
-		  this.opType = num
+			if(this.opType != ""){
+				this.resultFunc()
+				return
+			}else
+				this.opType = num
 		this.calculation+=num 
 	  },
 	  clear: function() { 
@@ -27,6 +31,12 @@ var app = new Vue({
 		
 		this.numOne = parseInt(nums[0])
 		this.numTwo = parseInt(nums[1])
+		
+		if((isNaN(this.numOne) | isNaN(this.numTwo)) == true)
+		{
+			this.clear()
+			return
+		}
 		  
 		if(this.opType == '+'){
 			this.calculation = this.numOne+this.numTwo
@@ -38,8 +48,10 @@ var app = new Vue({
 			this.calculation = this.numOne*this.numTwo
 		}
 
-		this.numOne = parseInt(this.calculation)
-		this.flag = false
+		res = this.calculation
+		this.clear()
+		this.numOne = parseInt(res)
+		this.calculation = res
 	  }
 	}
 })
